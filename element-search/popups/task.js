@@ -8,5 +8,6 @@ modalClose.item(0).onclick = function() {
 return modalMain.className = "modal modal__close";
 }
 showSuccess.item(0).onclick = function() {
+	modalMain.className = "modal modal__close";
 	return modalSuccess.className = "modal modal_active";
 }
