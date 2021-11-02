@@ -5,7 +5,7 @@ const modalSuccess = document.getElementById("modal_success");
 
 modalMain.className = "modal modal_active";
 modalClose.item(0).onclick = function() {
-return modalMain.className = "modal modal__close";
+	return modalMain.className = "modal modal__close";
 }
 showSuccess.item(0).onclick = function() {
 	modalMain.className = "modal modal__close";
