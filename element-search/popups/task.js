@@ -4,10 +4,18 @@ const showSuccess = document.getElementsByClassName("show-success");
 const modalSuccess = document.getElementById("modal_success");
 
 modalMain.className = "modal modal_active";
-modalClose.item(0).onclick = function() {
-	return modalMain.className = "modal modal__close";
+
+for (let i = 0; i < modalClose.length; i++) {
+	modalClose[i].onclick = function() {
+		//const modal = this.closest("modal");
+		//modal.className = "modal modal__close";
+
+		modalMain.className = "modal modal__close";
+		modalSuccess.className = "modal modal__close";
+	}
 }
+
 showSuccess.item(0).onclick = function() {
 	modalMain.className = "modal modal__close";
-	return modalSuccess.className = "modal modal_active";
+	modalSuccess.className = "modal modal_active";
 }
