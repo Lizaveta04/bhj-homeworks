@@ -17,14 +17,16 @@ class Game {
   }
 
   registerEvents() {
-    const currentSymbol = this.currentSymbol;
-    //Или const currentSymbol = document.querySelector('.symbol_correct');
-    const inputedSymbol = String.fromCharCode(?);
-    if (currentSymbol === inputedSymbol) {
-      this.success();
-    } else {
-      this.fail();
+    const handler = (e) => {
+    	const symbol = this.currentSymbol.textContent;
+    	const inputedSymbol = e.key;
+    	if (symbol === inputedSymbol) {
+    		this.success();
+    	} else {
+    		this.fail();
+    	}
     }
+    document.addEventListener('keydown', handler);
   }
 
   success() {
