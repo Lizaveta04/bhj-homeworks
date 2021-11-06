@@ -7,11 +7,13 @@ modalMain.className = "modal modal_active";
 
 for (let i = 0; i < modalClose.length; i++) {
 	modalClose[i].onclick = function() {
-		//const modal = this.closest("modal");
-		//modal.className = "modal modal__close";
-
-		modalMain.className = "modal modal__close";
-		modalSuccess.className = "modal modal__close";
+		//Вариант "попроще":
+		//modalMain.className = "modal modal__close";
+		//modalSuccess.className = "modal modal__close";
+		
+		//Вариант "более гибкий":
+		const modal = this.closest(".modal");
+		modal.className = "modal modal__close";
 	}
 }
 
