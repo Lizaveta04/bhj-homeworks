@@ -5,13 +5,11 @@ for (let i = 0; i < menuLink.length; i++) {
 		//Найдите меню рядом со ссылкой. Если оно есть, переключите у него класс menu_active.
 		const menu = this.closest(".menu__item");
 		const submenu = menu.querySelector(".menu.menu_sub");
-		if (submenu.className === "menu menu_sub") {
+		if (submenu && submenu.className === "menu menu_sub") {
 			submenu.className = "menu menu_sub menu_active";
 			//Запрещайте переход по ссылке для тех, что имеют вложенное меню. Остальные пункты меню должны без помех переводить пользователя на соответствующие страницы.
-			return false;
-		} else {
-			submenu.className = "menu menu_sub";
 			return false;
 		}
 	}
 }
+
