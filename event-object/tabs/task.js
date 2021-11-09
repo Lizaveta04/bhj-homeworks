@@ -17,3 +17,4 @@ for (let i = 0; i < tab.length; i++) {
 	}
 	tab[i].addEventListener('click', onClick);
 }
+
