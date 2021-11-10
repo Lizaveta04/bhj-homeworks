@@ -11,4 +11,5 @@ const rotatorChange = () => {
 	} 
 	rotatorCase[index].classList.add("rotator__case_active");
 }
+
 setInterval(rotatorChange, 1000);
