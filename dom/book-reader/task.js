@@ -25,4 +25,3 @@ for (let i = 0; i < fontSize.length; i++) {
 	}
 	fontSize[i].addEventListener('click', changeFontSize);
 }
-
