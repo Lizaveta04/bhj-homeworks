@@ -7,9 +7,11 @@ for (let i = 0; i < menuLink.length; i++) {
 		const submenu = menu.querySelector(".menu.menu_sub");
 		if (submenu && submenu.className === "menu menu_sub") {
 			submenu.className = "menu menu_sub menu_active";
-			//Запрещайте переход по ссылке для тех, что имеют вложенное меню. Остальные пункты меню должны без помех переводить пользователя на соответствующие страницы.
-			return false;
+		} else if (submenu.className === "menu menu_sub menu_active") {
+			submenu.className = "menu menu_sub";
 		}
+		//Запрещайте переход по ссылке для тех, что имеют вложенное меню. Остальные пункты меню должны без помех переводить пользователя на соответствующие страницы.
+		return false;
 	}
 }
 
