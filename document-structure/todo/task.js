@@ -9,9 +9,10 @@ const addTask = (e) => {
                     <div class="task__title">${taskInput.value}</div>
                     <a href="#" class="task__remove">&times;</a>
                   </div>`;
-    if (e.key === 'Enter' && taskInput.value !== ' ') {               
+    if (e.key === 'Enter' && taskInput.value !== '') {               
         taskList.insertAdjacentHTML('beforeEnd', task);
-        taskInput.value = ' ';
+        taskInput.value = '';
+        e.preventDefault();
     }
 }
 taskInput.addEventListener('keydown', addTask);
