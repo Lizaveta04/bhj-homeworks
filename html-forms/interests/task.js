@@ -15,4 +15,3 @@ for (let i = 0; i < checkbox.length; i++) {
     }
     checkbox[i].addEventListener('change', onChecked);
 }
-

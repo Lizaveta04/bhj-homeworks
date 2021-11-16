@@ -68,7 +68,7 @@ class Autocomplete {
   }
 
   getMatches( text ) {
-    let result = [];
+    let result = [ ];
     for (let i = 0; i < this.input.options.length; i++) {
       if (this.input.options[i].text.includes(this.searchInput.value)) {
         let checklist = {
