@@ -15,4 +15,3 @@ next.onclick = function() {
 	positionOfActiveSlide < sliders.length-1 ? positionOfActiveSlide++ : positionOfActiveSlide = 0;
 	sliders[positionOfActiveSlide].className = "slider__item slider__item_active";
 }
-
