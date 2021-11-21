@@ -9,20 +9,9 @@ xhr.addEventListener('readystatechange', function() {
 	if (xhr.readyState === xhr.DONE && xhr.status === 200) {
 		image.classList.remove("loader_active");
 		let currencyTable = JSON.parse(xhr.responseText).response.Valute;
-		for (key in currencyTable) {
+		for (let key in currencyTable) {
 			let itemCode = currencyTable[key].CharCode;
 			let itemValue = currencyTable[key].Value;
-			//items.innerHTML =+ `
-			//<div class="item__code">
-    		//	${itemCode}
-			//</div>
-			//<div class="item__value">
-    		//	${itemValue}
-			//</div>
-			//<div class="item__currency">
-	    	//	руб.
-			//</div>
-			//`;
 			let html = `
 			<div class="item__code">
     			${itemCode}
