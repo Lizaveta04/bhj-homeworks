@@ -3,39 +3,34 @@ const taskInput = document.getElementById("task__input");
 const btn = document.getElementById("tasks__add");
 const taskRemove = document.querySelectorAll(".task__remove")
 
-const addTask1 = (e) => {
-    const taskText = taskInput.value.trim();
-    const html = `<div class="task">
-                    <div class="task__title">${taskText}</div>
-                    <a href="#" class="task__remove">&times;</a>
-                  </div>`;
-    if (e.key === 'Enter' && taskText !== '') {               
-        taskList.insertAdjacentHTML('beforeEnd', html);
-        taskInput.value = '';
-        e.preventDefault();
-    }
-}
-const addTask2 = (e) => {
-    const taskText = taskInput.value.trim();
-    const html = `<div class="task">
-                    <div class="task__title">${taskText}</div>
-                    <a href="#" class="task__remove">&times;</a>
-                  </div>`;
-    if (taskText !== '') {               
-        taskList.insertAdjacentHTML('beforeEnd', html);
-        taskInput.value = '';
-        e.preventDefault();
-    }
-}
-taskInput.addEventListener('keydown', addTask1);
-btn.addEventListener('click', addTask2);
+function addTask() {
+    const html = `
+    <div class="task">
+    <div class="task__title">${taskInput.value.trim()}</div>
+    <a href="#" class="task__remove">&times;</a>
+    </div>
+    `;
+    taskList.insertAdjacentHTML('beforeEnd', html);
+    taskInput.value = '';
+};
 
-const deleteTask = () => {
-    for (let i = 0; i < taskRemove.length; i++) {
-        if (taskRemove[i].onClick) {
-            let task = taskRemove[i].closest(".task");
-            task.remove();
-        }
+const handler1 = (e) => {
+    if (e.key === 'Enter' && taskInput.value.trim() !== '') {  
+    	addTask();             
     }
-}
+};
+const handler2 = (e) => {
+	e.preventDefault();
+    if (taskInput.value.trim() !== '') {   
+    	addTask();            
+    }
+};
+taskInput.addEventListener('keydown', handler1);
+btn.addEventListener('click', handler2);
+
+const deleteTask = (e) => {
+	let task = e.target.closest(".task")
+	taskList.removeChild(task);
+};
 taskList.addEventListener('click', deleteTask)
+
