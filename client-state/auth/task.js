@@ -43,4 +43,3 @@ logoutBtn.addEventListener('click', () => {
     localStorage.removeItem('id');
     signinForm.reset();
 });
-
