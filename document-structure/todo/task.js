@@ -33,4 +33,3 @@ const deleteTask = (e) => {
 	taskList.removeChild(task);
 };
 taskList.addEventListener('click', deleteTask)
-
