@@ -8,7 +8,6 @@ for (let i = 0; i < hasTooltips.length; i++) {
         e.preventDefault();
         const top = e.target.getBoundingClientRect().top;
         const left = e.target.getBoundingClientRect().left;
-        
         if (tooltip.innerText === e.target.title) {
             tooltip.classList.toggle("tooltip_active");
         } else {

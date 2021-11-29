@@ -40,4 +40,3 @@ for (let i = 0; i < controls.length; i++) {
         e.currentTarget.querySelector('.product__quantity-value').innerText = quantityValue;
     });
 }
-
